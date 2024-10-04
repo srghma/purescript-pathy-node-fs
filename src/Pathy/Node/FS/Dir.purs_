@@ -1,0 +1,15 @@
+module Pathy.Node.FS.Dir where
+
+import Prelude
+
+import Data.Either (Either(..))
+import Data.Maybe (Maybe(..))
+import Data.Nullable (Nullable, toMaybe)
+import Effect (Effect)
+import Effect.Exception (Error)
+import Effect.Uncurried (EffectFn1, EffectFn2, mkEffectFn1, mkEffectFn2, runEffectFn1, runEffectFn2)
+import Node.FS.Dirent (Dirent, DirentNameTypeString)
+import Node.Path (FilePath)
+
+-- | Get the path of this directory as was provided to fs.opendir(), fs.opendirSync(), or fsPromises.opendir().
+foreign import path :: Dir -> FilePath

@@ -1,0 +1,9 @@
+module Pathy.Node.FS.Dirent where
+
+import Prelude
+
+import Node.Buffer (Buffer)
+import Node.Path (FilePath)
+import Unsafe.Coerce (unsafeCoerce)
+
+foreign import parentPath :: forall direntnametype. Dirent direntnametype -> FilePath
